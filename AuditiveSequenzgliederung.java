@@ -32,7 +32,7 @@ public class AuditiveSequenzgliederung {
         Track track = sequence.createTrack();
         int noteDuration = 10; // Dauer der Noten
 
-        // Erweiterte Melodien für Klavier und Cello
+        // Erweiterte Melodien für Klavier und Klavier 2
         int[] pianoMelody = {60, 62, 64, 65, 67, 69, 71, 72, 74, 76, 77, 79, 81, 83, 84, 83, 81, 79, 77, 76, 74, 72, 71, 69, 67, 65, 64, 62, 60};
         long tick = 0;
         for (int note : pianoMelody) {
@@ -40,11 +40,11 @@ public class AuditiveSequenzgliederung {
             tick += noteDuration;
         }
 
-        // Cellomelodie, versetzt zur Klaviermelodie
-        int[] celloMelody = {48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 71, 69, 67, 65, 64, 62, 60, 59, 57, 55, 53, 52, 50, 48};
+        // Melodie von Klavier 2, versetzt zur Melodie von Klavier 1
+        int[] pianoMelody2 = {48, 50, 52, 53, 55, 57, 59, 60, 62, 64, 65, 67, 69, 71, 72, 71, 69, 67, 65, 64, 62, 60, 59, 57, 55, 53, 52, 50, 48};
         tick = pianoMelody.length * noteDuration / 2; // Startet in der Mitte der Klaviermelodie
-        for (int note : celloMelody) {
-            addNote(track, 1, 42, note, 80, tick, noteDuration);
+        for (int note : pianoMelody2) {
+            addNote(track, 1, 0, note, 80, tick, noteDuration);
             tick += noteDuration;
         }
 
